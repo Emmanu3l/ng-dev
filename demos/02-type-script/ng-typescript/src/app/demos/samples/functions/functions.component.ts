@@ -1,14 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-functions',
   templateUrl: './functions.component.html',
   styleUrls: ['./functions.component.scss'],
 })
-export class FunctionsComponent implements OnInit {
-  constructor() {}
-
-  ngOnInit() {}
+export class FunctionsComponent {
 
   typedFunctions() {
     const addFunction = function (x: number, y: number): number {

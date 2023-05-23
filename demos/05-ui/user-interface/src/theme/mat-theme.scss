@@ -7,7 +7,10 @@
 $primary: mat.define-palette(mat.$blue-palette, 600);
 $accent: mat.define-palette(mat.$grey-palette, 400);
 $warn: mat.define-palette(mat.$red-palette);
+$fg: mat.define-palette(mat.$grey-palette, 100);
+$bg: mat.define-palette(mat.$blue-grey-palette, 100);
 
+//Build theme
 $theme: mat.define-light-theme(
   (
     color: (
@@ -28,6 +31,8 @@ $theme: mat.define-light-theme(
   --color-primary: #{mat-color($primary)};
   --color-accent: #{mat-color($accent)};
   --color-warn: #{mat-color($warn)};
+  --color-fg: #{mat-color($fg)};
+  --color-bg: #{mat-color($bg)};
   --color-font: white;
 
   --gap-small: 0.5rem;

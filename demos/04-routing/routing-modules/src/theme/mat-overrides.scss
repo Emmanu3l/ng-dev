@@ -93,3 +93,13 @@ mat-header-row {
   background-color: var(--color-primary);
   color: var(--color-font);
 }
+
+//mat-sidenav
+.mat-sidenav {
+  width: 250px;
+  background-color: var(--color-fg);
+}
+
+.mat-drawer-container {
+  color: var(--color-darkfont);
+}

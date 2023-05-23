@@ -90,10 +90,6 @@ export class ServicesComponent {
   }
 
   consumeService() {
-    // just to show the subscription
-    let subscription = this.service.getSkills().subscribe();
-    console.log('skills obs: ', subscription);
-
     // assign to prop in component for use in template
     // subscribe return the native type that was wrapped in the observable
     this.service.getSkills().subscribe((data) => {

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { format } from 'date-fns';
 
 @Component({
@@ -6,10 +6,7 @@ import { format } from 'date-fns';
   templateUrl: './objects.component.html',
   styleUrls: ['./objects.component.scss'],
 })
-export class ObjectsComponent implements OnInit {
-  constructor() {}
-
-  ngOnInit() {}
+export class ObjectsComponent {
 
   objectsBasics() {
     // Plain old JavaScript -> anti-pattern
@@ -65,7 +62,7 @@ export class ObjectsComponent implements OnInit {
     //destructuring
     let { firstName, age } = fullPerson;
 
-    console.log(firstName + ', ' + age); //implicit cast of age
+    console.log(`${firstName}, ${age}`); //implicit cast of age
   }
 
   valref() {
@@ -97,9 +94,11 @@ export class ObjectsComponent implements OnInit {
 
   objAssign() {
     const obj = { name: 'Soi' };
-    const clone = Object.assign({}, obj, {
-      birth: format(new Date(), 'MMM d yy'),
-    });
+    const clone = Object.assign(
+      {},
+      obj,
+      { birth: format(new Date(), 'MMM d yy'), }
+    );
     console.log(clone);
 
     const arr = [1, 2];

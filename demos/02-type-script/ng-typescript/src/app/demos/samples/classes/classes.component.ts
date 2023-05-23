@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import * as _ from 'lodash'; // Alias import
 
 @Component({
@@ -6,10 +6,7 @@ import * as _ from 'lodash'; // Alias import
   templateUrl: './classes.component.html',
   styleUrls: ['./classes.component.scss'],
 })
-export class ClassesComponent implements OnInit {
-  constructor() {}
-
-  ngOnInit() {}
+export class ClassesComponent {
 
   basicClasses() {
     class Voucher {
@@ -88,7 +85,7 @@ export class ClassesComponent implements OnInit {
 
     class Dog {
       //private or public creats prop implicitly
-      constructor(private name: string, public breed: string) {}
+      constructor(private name: string, public breed: string) { }
 
       barkName() {
         return 'Wuff, my name is ' + this.name + ', I am a ' + this.breed;
@@ -104,7 +101,7 @@ export class ClassesComponent implements OnInit {
     console.log(dog.breed);
 
     class Invoice {
-      constructor(public text: string, public paid: boolean = false) {}
+      constructor(public text: string, public paid = false) { }
     }
 
     const b1: Invoice = new Invoice('Car Purchase');
@@ -118,7 +115,6 @@ export class ClassesComponent implements OnInit {
         if (name.length < 1) {
           throw new Error('Empty name!');
         }
-
         this.name = name;
       }
     }
@@ -129,11 +125,11 @@ export class ClassesComponent implements OnInit {
 
   deepClone() {
     class Dog {
-      constructor(public name: string, public breed: string) {}
+      constructor(public name: string, public breed: string) { }
     }
 
     class Person {
-      constructor(public name: string, public dogs: Dog[]) {}
+      constructor(public name: string, public dogs: Dog[]) { }
     }
 
     const alex = new Person('Alex', [
@@ -159,10 +155,10 @@ export class ClassesComponent implements OnInit {
 
   inheritance() {
     class Dog {
-      constructor(public name: string) {} // public or private creates implicit prop
+      constructor(public name: string) { } // public or private creates implicit prop
       public speed = 'with 40 km/h';
 
-      move(meters: number) {
+      move(meters: number): void {
         console.log(this.name + ' moved ' + meters + 'm. ' + this.speed);
       }
     }
@@ -173,8 +169,8 @@ export class ClassesComponent implements OnInit {
       } // super -> C# .base
       public speed = 'with up to 110 km/h';
 
-      // method override
-      move(meters = 500) {
+      // method  override
+      move(meters = 500): void {
         console.log('Running ...' + meters + 'm. ' + this.speed);
         // If you want to call implementation of base class use:
         super.move(meters);
@@ -220,7 +216,7 @@ export class ClassesComponent implements OnInit {
     }
 
     class Grid {
-      constructor(public scale: number) {}
+      constructor(public scale: number) { }
 
       static origin: ICoordinate = { x: 0, y: 0, z: 0 } as ICoordinate;
 

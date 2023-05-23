@@ -1,16 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-interfaces',
   templateUrl: './interfaces.component.html',
   styleUrls: ['./interfaces.component.scss'],
 })
-export class InterfacesComponent implements OnInit {
-  constructor() {}
-
-  ngOnInit() {}
-
-  // Interfaces
+export class InterfacesComponent {
 
   interfacesBasics() {
     interface IHumanBeeing {
@@ -26,6 +21,8 @@ export class InterfacesComponent implements OnInit {
 
     const rob: Knight = new Knight();
     rob.name = 'Rob Stark';
+
+    const john: Knight = { name: 'John Snow', birthDate: new Date(), weapon: 'Schattenwolf' };
 
     interface ILongLat {
       Long: number;

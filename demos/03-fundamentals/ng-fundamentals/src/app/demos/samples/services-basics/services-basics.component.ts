@@ -22,6 +22,15 @@ export class ServicesBasicsComponent {
     });
   }
 
+  getSkillsById(): void {
+    const id = 123;
+    this.loading = true;
+    this.service.getSkill(id).subscribe((data) => {
+      this.result = data;
+      this.loading = false;
+    });
+  }
+
   addSkill(): void {
     const skill = {
       id: 0,

@@ -18,7 +18,7 @@
 }
 
 .mat-mdc-card-subtitle{
-  color: var(--color-fg);
+  color: var(--color-font);
 }
 
 .mat-mdc-card-content {
@@ -44,7 +44,7 @@ button.mat-mdc-raised-button{
 //mat-snackbar
 .app-snackbar{
   background-color: var(--color-primary);
-  color: var(--color-fg);
+  color: var(--color-font);
   position: relative;
   top: -1rem;
 }
@@ -80,16 +80,26 @@ mat-expansion-panel-header {
 }
 
 .mat-expansion-panel-header-title{
-  color: var(--color-fg);
+  color: var(--color-font);
   font-size: 20px;
 }
 
 .mat-expansion-panel-header-description, .mat-expansion-indicator::after {
-  color: var(--color-fg);
+  color: var(--color-font);
 }
 
 //mat-table
 mat-header-row {
   background-color: var(--color-primary);
-  color: var(--color-fg);
+  color: var(--color-font);
+}
+
+//mat-sidenav
+.mat-sidenav {
+  width: 250px;
+  background-color: var(--color-fg);
+}
+
+.mat-drawer-container {
+  color: var(--color-darkfont);
 }

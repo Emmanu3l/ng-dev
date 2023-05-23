@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core'; // ES 6 module import
+import { Component } from '@angular/core'; // ES 6 module import
 import * as moment from 'moment'; // Non ES6 Moduel import
 import { Voucher } from '../model';
 
@@ -7,10 +7,7 @@ import { Voucher } from '../model';
   templateUrl: './types.component.html',
   styleUrls: ['./types.component.scss'],
 })
-export class TypesComponent implements OnInit {
-  constructor() { }
-
-  ngOnInit() { }
+export class TypesComponent {
 
   basicVariables() {
     const myname = 'alex';
@@ -52,6 +49,7 @@ export class TypesComponent implements OnInit {
     const index = 0;
     const array = ['a', 'b', 'c'];
 
+    //antipattern
     for (let index = 0; index < array.length; index++) {
       console.log('index:' + index);
       console.log('item:' + array[index]);
