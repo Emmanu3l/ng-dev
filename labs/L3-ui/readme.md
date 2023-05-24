@@ -21,6 +21,19 @@ Implement a Material Design for Food App:
 - Use [mat-card](https://material.angular.io/components/card/overview) elemtens in `food-list.component.html` and `food-edit.component.html` to surround the content
 
 - Use [mat-table](https://material.angular.io/components/table/overview) for the `food-list.component.html`
+
+    >Note: The material table receives its values from the following line:
+
+    ```typescript
+    @Input() food: FoodItem[] = [];
+    ```
+    When items in the table are updated, the ngOnChanges lifecycle hook is used to update the table:
+
+    ```typescript
+    ngOnChanges(changes: SimpleChanges) {
+        this.dataSource = new MatTableDataSource(changes["food"].currentValue);
+    }
+    ```
 - Use [mat-input](https://material.angular.io/components/form-field/overview) for `food-edit.component.html`
 
 - Use the [mat-button-directive](https://material.angular.io/components/button/examples) for the `Save`-button in `food-edit.component.html`

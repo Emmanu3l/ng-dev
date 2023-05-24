@@ -29,16 +29,6 @@
     ng g s food/food
     ```
 
-- Don't forget to handle data change events
-
-    ```typescript
-    ngOnChanges(changes: SimpleChanges): void {
-        if (changes['modelclass']) {
-        console.log('receiving updated modelclass:', changes['modelclass'].currentValue);
-        }
-    }
-    ```
-
 - If you want to generate the id manually you could use this code fragment:
 
     ```typescript
