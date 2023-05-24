@@ -9,6 +9,10 @@ label{
   }
 }
 
+select{
+  border: 1px solid var(--color-primary);
+}
+
 input{
   display: block;
   margin: var(--gap-small) 0;
@@ -16,4 +20,10 @@ input{
   border: 1px solid var(--color-primary);
   background-color: var(--color-accent);
   color: var(--color-font);
+}
+
+.row{
+  display: flex;
+  flex-direction: row;
+  gap: var(--gap-small);
 }

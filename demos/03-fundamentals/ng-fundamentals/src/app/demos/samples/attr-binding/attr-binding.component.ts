@@ -9,11 +9,11 @@ export class AttrBindingComponent {
   isDisabled = true;
   isHidden = false;
 
-  toggleInput() {
+  toggleDisabled() {
     this.isDisabled = !this.isDisabled;
   }
 
-  hideInput() {
+  toggleHidden() {
     this.isHidden = !this.isHidden;
   }
 }

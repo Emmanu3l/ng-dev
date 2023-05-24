@@ -53,7 +53,7 @@ const routes: Routes = [
         component: AdminBComponent,
       },
     ],
-    canActivate: [IsAuthRouteGuard],
+    // canActivate: [IsAuthRouteGuard],
   },
   {
     path: 'skills-old',

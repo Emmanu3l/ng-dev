@@ -17,8 +17,8 @@
         role="listitem"
         *ngFor="let item of demos | async"
         [routerLink]="['./' + item.url]"
-        >{{ item.title }}</mat-list-item
-      >
+        >{{ item.title }}
+      </mat-list-item>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>

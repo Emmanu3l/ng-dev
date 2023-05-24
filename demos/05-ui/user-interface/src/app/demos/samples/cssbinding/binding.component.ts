@@ -5,14 +5,10 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   templateUrl: './binding.component.html',
   styleUrls: ['./binding.component.scss'],
 })
-export class CSSBindingComponent implements OnInit {
+export class CSSBindingComponent {
   addClass = true;
   addStyle = true;
   anotherProperty = true;
-
-  constructor() {}
-
-  ngOnInit() {}
 
   toggleBinding() {
     this.addClass = !this.addClass;

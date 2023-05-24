@@ -1,4 +1,4 @@
-.flex-container {
+.flex-container-row {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -18,7 +18,7 @@
   flex-grow: 1;
   min-width: 200px;
   height: 100px;
-  margin: var(--gap-medium);  
+  margin: var(--gap-medium);
   background: var(--color-primary);
   color: white;
   font-weight: bold;
@@ -27,5 +27,5 @@
 }
 
 .mat-mdc-card>.mat-mdc-card-actions:last-child {
-  padding-bottom: var(--gap-medium); 
+  padding-bottom: var(--gap-medium);
 }

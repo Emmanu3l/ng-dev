@@ -10,11 +10,11 @@ import { delay } from 'rxjs/operators';
   styleUrls: ['./binding.component.scss'],
 })
 export class BindingComponent implements OnInit {
-  constructor(private ps: PersonService) {}
+  constructor(private ps: PersonService) { }
 
   hide = false;
   persons: Person[] = [];
-  selectedPerson: Person = { id: 0, name: '', age: 0, gender: '' };
+  selectedPerson: Person = new Person();
   latePerson: Person | null = null;
   isActive: boolean = false;
 
@@ -22,12 +22,12 @@ export class BindingComponent implements OnInit {
     this.ps.getPersons().subscribe((data) => {
       if (data) {
         this.persons = data;
-        this.selectedPerson = this.persons[0];
+        if (this.persons.length > 0) { this.selectedPerson = this.persons[0]; }
       }
     });
 
-    let p: Person = { id: 17, name: 'Heidi', age: 13, gender: 'female' };
-    //convert person to observable using of operator
+    //convert person to observable using of rxjs operator
+    const p: Person = { id: 17, name: 'Heidi', age: 13, gender: 'female' };
     of(p)
       .pipe(delay(4000))
       .subscribe((data) => {

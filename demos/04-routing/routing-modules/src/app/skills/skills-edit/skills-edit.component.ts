@@ -12,8 +12,8 @@ import { Observable } from 'rxjs';
 })
 
 export class SkillsEditComponent implements OnInit {
-  skill: Skill = { id: 0, name: '', hours: 1, completed: false };
-  isDisabled = false;
+  skill: Skill = new Skill();
+  isReadOnly = false;
 
   constructor(
     private service: SkillsService,
@@ -45,9 +45,9 @@ export class SkillsEditComponent implements OnInit {
     this.getSkill(id);
 
     // query params
-    this.isDisabled = this.route.snapshot.queryParams['readonly'];
-    if (this.isDisabled != null) {
-      console.log(`Page is readonly: ${this.isDisabled}`);
+    this.isReadOnly = this.route.snapshot.queryParams['readonly'];
+    if (this.isReadOnly != null) {
+      console.log(`Page is readonly: ${this.isReadOnly}`);
     }
     const clientid = this.route.snapshot.queryParams['clientid'];
     if (clientid) {

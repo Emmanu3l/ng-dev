@@ -11,7 +11,7 @@ export class FlexboxComponent implements OnInit {
   movies: Movie[] = [];
   currclass = 'flex-container';
 
-  constructor(private ms: MovieService) {}
+  constructor(private ms: MovieService) { }
 
   ngOnInit() {
     this.movies = this.ms.getMovies();
@@ -19,9 +19,9 @@ export class FlexboxComponent implements OnInit {
 
   toggleLayout() {
     this.currclass =
-      this.currclass == 'flex-container'
+      this.currclass == 'flex-container-row'
         ? 'flex-container-col'
-        : 'flex-container';
+        : 'flex-container-row';
     console.log(this.currclass);
   }
 }

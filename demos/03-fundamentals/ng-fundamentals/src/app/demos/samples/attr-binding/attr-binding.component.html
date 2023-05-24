@@ -4,10 +4,10 @@
     <mat-card-title>Attribute Binding</mat-card-title>
   </mat-card-header>
   <mat-card-content class="cmdItems">
-    <button mat-raised-button (click)="toggleInput()" color="accent">
+    <button mat-raised-button (click)="toggleDisabled()" color="accent">
       Click to {{ isDisabled ? 'enable' : 'disable' }} the input
     </button>
-    <button mat-raised-button (click)="hideInput()" color="accent">
+    <button mat-raised-button (click)="toggleHidden()" color="accent">
       Click to {{ isHidden ? 'show' : 'hide' }} the input
     </button>
     <div class="inputContainer">

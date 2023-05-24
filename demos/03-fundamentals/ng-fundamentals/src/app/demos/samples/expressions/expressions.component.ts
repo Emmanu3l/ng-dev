@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-expressions',
@@ -6,7 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./expressions.component.scss'],
 })
 export class ExpressionsComponent {
-  constructor() { }
 
   title = 'Expressions & Interpolation';
   nbr = 7;

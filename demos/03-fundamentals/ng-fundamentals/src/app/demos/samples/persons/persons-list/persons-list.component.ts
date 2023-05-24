@@ -2,9 +2,8 @@ import {
   Component,
   EventEmitter,
   Input,
-  OnInit,
   Output,
-  SimpleChanges,
+  SimpleChanges
 } from '@angular/core';
 import { Person } from '../person.model';
 
@@ -13,13 +12,9 @@ import { Person } from '../person.model';
   templateUrl: './persons-list.component.html',
   styleUrls: ['./persons-list.component.scss'],
 })
-export class PersonsListComponent implements OnInit {
-  constructor() {}
-
+export class PersonsListComponent {
   @Input() persons: Person[] = [];
   @Output() personSelected = new EventEmitter<Person>();
-
-  ngOnInit() {}
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['persons']) {

@@ -1,11 +1,11 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-first-child',
   template: `
     <div class="divclass">First Child</div>
     <h3>I am h3 in first child</h3>
-    <div class="seehowctxworks">
+    <div>
       <app-nested-child></app-nested-child>
     </div>
   `,
@@ -17,10 +17,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
         margin: 2rem;
       };
     `
-  ]
+  ],
+  // encapsulation: ViewEncapsulation.None
 })
-export class FirstChildComponent implements OnInit {
-  constructor() { }
-
-  ngOnInit(): void { }
-}
+export class FirstChildComponent { }

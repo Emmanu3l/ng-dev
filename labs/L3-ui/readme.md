@@ -2,17 +2,11 @@
 
 ![material](_images/material.jpg)
 
-Add [Angular Material](https://material.angular.io) & [Angular Flex Layout](https://github.com/angular/flex-layout/wiki) to your project:
+Add [Angular Material](https://material.angular.io) to your project:
 
 - Install Angular Material using the [Material Getting Started](https://material.angular.io/guide/getting-started) and choose a theme of your choice.
 
 - Implement a `material.module.ts` and copy its default content from the [Angular Material Docs](https://material.angular.io/components/categories) or any Sample in [Stackblitz](https://stackblitz.com/run?file=src/app/badge-overview-example.ts)
-
-- Add the [@angular/flex-layout](https://github.com/angular/flex-layout/wiki) library to the project. Add it to `app.module.ts`. 
-
-    ```
-    npm install --save @angular/flex-layout @angular/cdk
-    ```
 
 - Test the installation of Angular Material by replacing the `div` in the `navbar.component.html` with a [Material Toolbar](https://material.angular.io/components/toolbar/overview)
 

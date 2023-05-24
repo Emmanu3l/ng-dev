@@ -4,7 +4,7 @@
   <mat-card-header>
     <mat-card-title> Bindings - Change text and watch changes</mat-card-title>
   </mat-card-header>
-  <mat-card-content fxLayout="column">
+  <mat-card-content column>
       <label>Interpolation - One Way Binding:</label>
       <div>{{selectedPerson.name}}</div>
       <label>One Way Attribute Binding</label>
@@ -12,6 +12,7 @@
       <label for="lblOneWayModel">One Way (Model) Binding</label>
       <input type="text" [ngModel]="selectedPerson.name"/>
       <label for="lblTwoWay">Two Way (Model) Binding</label>
+      <!-- banana in a box -->
       <input type="text" [(ngModel)]="selectedPerson.name"/>
   </mat-card-content>
 </mat-card>
@@ -32,14 +33,10 @@
 
 <mat-card appearance="outlined">
   <mat-card-header>
-    <mat-card-title>Ode to my sighthounds</mat-card-title>
+    <mat-card-title>Img & Select Binding</mat-card-title>
   </mat-card-header>
 
-  <mat-card-content
-    fxLayout="column"
-    fxLayoutGap="16px"
-    *ngIf="selectedPerson.imgUrl"
-  >
+  <mat-card-content *ngIf="selectedPerson.imgUrl">
     <div>
       <h2>{{ selectedPerson.name }}, {{ selectedPerson.age }}</h2>
       <img [src]="selectedPerson.imgUrl" width="150px" />
@@ -55,7 +52,7 @@
 <mat-card appearance="outlined">
   <mat-card-header>
     <mat-card-title>
-      Show and hide - Prop Binding - click buttons
+      Attribute Binding on a div
     </mat-card-title>
   </mat-card-header>
 
@@ -75,22 +72,26 @@
   <mat-card-header>
     <mat-card-title> Bindings Radio Button Groups </mat-card-title>
   </mat-card-header>
-  <mat-card-content>
+  <mat-card-content >
+   <div class="row">
     <input
-      type="radio"
-      name="gender"
-      [(ngModel)]="selectedPerson.gender"
-      value="male"
-    />
-    Male
-    <input
-      type="radio"
-      name="gender"
-      [(ngModel)]="selectedPerson.gender"
-      value="female"
-    />
-    Female <br />
-    {{ selectedPerson.name }} is {{ selectedPerson.gender }}
+    type="radio"
+    name="gender"
+    [(ngModel)]="selectedPerson.gender"
+    value="male"
+  />
+  Male
+  <input
+    type="radio"
+    name="gender"
+    [(ngModel)]="selectedPerson.gender"
+    value="female"
+  />
+  Female
+   </div>
+    <div>
+      {{ selectedPerson.name }} is {{ selectedPerson.gender }}
+    </div>
   </mat-card-content>
 </mat-card>
 
@@ -99,7 +100,11 @@
     <mat-card-title> Bindings Checkboxes </mat-card-title>
   </mat-card-header>
   <mat-card-content>
-    <input type="checkbox" [(ngModel)]="isActive" /> <br />
-    Current State: {{ isActive }}
+    <div class="row">
+      <span>Is Active:</span> <input type="checkbox" [(ngModel)]="isActive" />
+    </div>
+    <div>
+      Current State: {{ isActive }}
+    </div>
   </mat-card-content>
 </mat-card>

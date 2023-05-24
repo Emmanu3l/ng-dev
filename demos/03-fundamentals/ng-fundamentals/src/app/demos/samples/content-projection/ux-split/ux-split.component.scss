@@ -1,14 +1,24 @@
-.container {
+.gdContainer {
+  display: grid;
+  grid-template-rows: 60px auto;
+  grid-template-columns: auto 240px;
+  grid-template-areas:
+    "titlebar titlebar"
+    "main actions";
   min-height: 300px;
-  height: 500px;
   height: 100%;
-  border: 1px solid var(--color-primary);
 }
 
-.split-main {
-  padding: 10px;
+.gdTitlebar{
+  grid-area: titlebar;
 }
 
-.split-sidebar {
-  padding: 10px;
+.gdMainContent{
+  grid-area: main;
+  padding: var(--gap-medium);
+}
+
+.gdActions{
+  grid-area: actions;
+  padding: var(--gap-medium);
 }

@@ -2,11 +2,9 @@
   <mat-card-header>
     <mat-card-title> Checked Pipe </mat-card-title>
   </mat-card-header>
-  <mat-card-content fxLayout="column" fxLayoutGap="16px">
-    <div fxLayout="row" fxLayoutGap="16px">
-      <label>Is Checked:</label>
-      <input type="checkbox" [(ngModel)]="isChecked" />
-    </div>
+  <mat-card-content>
+    <label>Is Checked:</label>
+    <input type="checkbox" [(ngModel)]="isChecked" />
     <div>
       <div>Is selected:</div>
       <div class="checked" [innerHTML]="isChecked | toChecked"></div>

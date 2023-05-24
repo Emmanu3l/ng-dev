@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormControl, Validators } from '@angular/forms';
 import { Subscription, debounceTime } from 'rxjs';
 
 @Component({
@@ -9,7 +9,7 @@ import { Subscription, debounceTime } from 'rxjs';
 })
 export class FormControlsComponent {
   subsSearchterms: Subscription | null = null;
-  searchterm = new FormControl<string | null>('');
+  searchterm = new FormControl<string | null>('', [Validators.required, Validators.minLength(3)]);
 
   ngOnInit() {
     this.subsSearchterms = this.searchterm.valueChanges

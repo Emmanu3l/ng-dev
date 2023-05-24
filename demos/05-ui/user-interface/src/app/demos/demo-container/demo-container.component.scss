@@ -4,8 +4,8 @@
   overflow: hidden;
   display: grid;
   gap: 5px;
-  grid-template-rows: 65px 5px auto;
-  grid-template-columns: auto 80px;
+  grid-template-rows: var(--toolbar-big) 5px auto;
+  grid-template-columns: auto var(--toolbar-xl);
   grid-template-areas:
     "toolbar toolbar"
     "loading loading"
@@ -58,7 +58,7 @@ mat-toolbar {
 }
 
 .sidenav-menu {
-  font-size: 1rem;
+  font-size:var(--font-small);
 }
 
 
