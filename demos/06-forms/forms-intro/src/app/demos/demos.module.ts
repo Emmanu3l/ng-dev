@@ -17,7 +17,6 @@ import { ReactiveFormsComponent } from './samples/reactive-forms/reactive-forms.
 import { ReactiveValidationComponent } from './samples/reactive-validation/reactive-validation.component';
 import { TemplateDrivenComponent } from './samples/template-driven/template-driven.component';
 import { TemplateValidationComponent } from './samples/template-validation/template-validation.component';
-import { ReactiveTypedComponent } from './samples/reactive-typed/reactive-typed.component';
 import { ColumnDirective, RowDirective } from '../shared/formatting/formatting-directives';
 
 const demoRoutes: Routes = [
@@ -34,7 +33,6 @@ const demoRoutes: Routes = [
       { path: 'reactivevalidation', component: ReactiveValidationComponent },
       { path: 'formcontrol', component: FormControlComponent },
       { path: 'formarray', component: FormArrayComponent },
-      { path: 'reactive-typed', component: ReactiveTypedComponent },
     ],
   },
 ];
@@ -50,7 +48,6 @@ const demoRoutes: Routes = [
     FormControlComponent,
     FormArrayComponent,
     NgModelGrpComponent,
-    ReactiveTypedComponent,
   ],
   imports: [
     CommonModule,

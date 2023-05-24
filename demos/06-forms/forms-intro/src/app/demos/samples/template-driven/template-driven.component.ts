@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Person, wealthOptsValues } from '../person.model';
 import { PersonService } from '../person.service';
@@ -9,10 +9,9 @@ import { PersonService } from '../person.service';
   styleUrls: ['./template-driven.component.scss'],
 })
 export class TemplateDrivenComponent implements OnInit {
+  ps = inject(PersonService);
   person: Person = new Person();
   wealthOpts = wealthOptsValues;
-
-  constructor(private ps: PersonService) {}
 
   ngOnInit() {
     this.ps.getPerson().subscribe((p) => {

@@ -25,10 +25,6 @@
       "title": "Reactive FormsBuilder"
     },
     {
-      "url": "reactive-typed",
-      "title": "Reactive Typed Forms"
-    },
-    {
       "url": "formarray",
       "title": "Reactive Form Array"
     },

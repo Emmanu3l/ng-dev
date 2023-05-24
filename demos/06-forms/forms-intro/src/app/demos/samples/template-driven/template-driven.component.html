@@ -3,11 +3,8 @@
     <mat-card-title> Template Driven </mat-card-title>
   </mat-card-header>
   <mat-card-content>
-    <form
-      #personForm="ngForm"
-      (ngSubmit)="savePerson(personForm)"
-      novalidate
-      column
+    <form #personForm="ngForm" (ngSubmit)="savePerson(personForm)"
+      novalidate column
     >
       <mat-form-field>
         <input

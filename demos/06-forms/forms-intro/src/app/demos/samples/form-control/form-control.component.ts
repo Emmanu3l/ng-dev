@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UntypedFormControl, Validators, FormControl } from '@angular/forms';
+import { FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-form-control',
@@ -7,16 +7,13 @@ import { UntypedFormControl, Validators, FormControl } from '@angular/forms';
   styleUrls: ['./form-control.component.scss'],
 })
 export class FormControlComponent implements OnInit {
-  constructor() {}
-
-  name = new FormControl('Giro', [
+  dog = { name: 'Giro', postal: '3544', city: 'Idolsberg' }
+  name = new FormControl(this.dog.name, [
     Validators.required,
     Validators.minLength(3),
   ]);
-
-  postal = new UntypedFormControl('3544', [Validators.minLength(4)]);
-
-  city = new FormControl<string>('Idolsberg', [Validators.maxLength(15)]);
+  postal = new FormControl(this.dog.postal, [Validators.minLength(4)]);
+  city = new FormControl<string>(this.dog.city, [Validators.maxLength(15)]);
 
   ngOnInit() {
     this.name.valueChanges.subscribe((data) =>

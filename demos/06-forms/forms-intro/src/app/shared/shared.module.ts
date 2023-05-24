@@ -5,9 +5,6 @@ import { RouterModule } from '@angular/router';
 import { MaterialModule } from '../material.module';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SidePanelComponent } from './side-panel/side-panel.component';
-import { MarkdownRendererComponent } from './markdown-renderer/markdown-renderer.component';
-import { MarkdownModule } from 'ngx-markdown';
-import { HttpClient } from '@angular/common/http';
 import { IntroComponent } from './intro/intro.component';
 import { LoadingComponent } from './loading/loading.component';
 import { MarkdownEditorComponent } from './markdown-editor/markdown-editor.component';
@@ -15,7 +12,6 @@ import { MarkdownEditorComponent } from './markdown-editor/markdown-editor.compo
 const mods = [
   NavbarComponent,
   SidePanelComponent,
-  MarkdownRendererComponent,
   MarkdownEditorComponent,
   IntroComponent,
   LoadingComponent,
@@ -26,10 +22,7 @@ const mods = [
     CommonModule,
     FormsModule,
     RouterModule,
-    MaterialModule,
-    MarkdownModule.forRoot({
-      loader: HttpClient,
-    }),
+    MaterialModule
   ],
   declarations: mods,
   exports: mods,

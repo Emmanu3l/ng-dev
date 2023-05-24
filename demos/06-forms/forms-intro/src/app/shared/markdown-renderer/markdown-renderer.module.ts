@@ -10,10 +10,10 @@ import { MatExpansionModule } from '@angular/material/expansion';
   exports: [MarkdownRendererComponent],
   imports: [
     CommonModule,
+    MatExpansionModule,
     MarkdownModule.forRoot({
       loader: HttpClient,
     }),
-    MatExpansionModule,
   ],
 })
-export class MdRendererModule {}
+export class MarkdownRendererModule { }

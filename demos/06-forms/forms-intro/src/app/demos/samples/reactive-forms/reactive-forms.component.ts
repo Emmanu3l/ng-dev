@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Person, wealthOptsValues } from '../person.model';
 import { PersonService } from '../person.service';
@@ -9,9 +9,11 @@ import { PersonService } from '../person.service';
   styleUrls: ['./reactive-forms.component.scss'],
 })
 export class ReactiveFormsComponent implements OnInit {
+  ps = inject(PersonService);
   person: Person = new Person();
   wealthOpts = wealthOptsValues;
 
+  //declarative approach to form creation -> produces typed from
   personForm = new FormGroup({
     name: new FormControl(this.person.name, Validators.required),
     age: new FormControl(this.person.age),
@@ -19,8 +21,6 @@ export class ReactiveFormsComponent implements OnInit {
     gender: new FormControl(this.person.gender),
     wealth: new FormControl(this.person.wealth),
   });
-
-  constructor(private ps: PersonService) {}
 
   ngOnInit() {
     this.ps.getPerson().subscribe((p) => {

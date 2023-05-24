@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { Person } from '../person.model';
 import { PersonService } from '../person.service';
 
@@ -8,10 +8,9 @@ import { PersonService } from '../person.service';
   styleUrls: ['./ng-model-grp.component.scss'],
 })
 export class NgModelGrpComponent implements OnInit {
+  ps = inject(PersonService);
   person: Person = new Person();
   wealthOpts = ['poor', 'rich', 'middle_class'];
-
-  constructor(private ps: PersonService) {}
 
   ngOnInit() {
     this.ps.getPerson().subscribe((p) => {

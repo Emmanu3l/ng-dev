@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import {
-  UntypedFormBuilder,
+  FormBuilder,
   UntypedFormControl,
   UntypedFormGroup,
-  Validators,
+  Validators
 } from '@angular/forms';
 import { Person } from '../person.model';
 import { PersonService } from '../person.service';
@@ -15,6 +15,7 @@ import { asyncMailExistsValidator } from './asyncMailExistsValidator';
   styleUrls: ['./reactive-validation.component.scss'],
 })
 export class ReactiveValidationComponent implements OnInit {
+  ps = inject(PersonService);
   person: Person = new Person();
   wealthOpts = ['poor', 'rich', 'middle_class'];
 
@@ -25,20 +26,20 @@ export class ReactiveValidationComponent implements OnInit {
     ],
     age: [this.person.age, [Validators.min(18), Validators.max(99)]],
     gender: [this.person.gender],
-    email: [
-      this.person.email,
-      [Validators.required, Validators.email],
-      [this.mailExistsValidator],
-      { updateOn: 'blur' },
+    email: [this.person.email,
+    {
+      validators: [Validators.required, Validators.email],
+      asyncValidators: [this.mailExistsValidator],
+      updateOn: 'blur'
+    }
     ],
     wealth: [this.person.wealth],
   });
 
   constructor(
-    private fb: UntypedFormBuilder,
-    private ps: PersonService,
+    private fb: FormBuilder,
     private mailExistsValidator: asyncMailExistsValidator
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.loadData();

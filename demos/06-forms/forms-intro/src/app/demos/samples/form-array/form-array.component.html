@@ -16,9 +16,9 @@
         <h6>Add your skills:</h6>
         <div
           formArrayName="skillsGrp"
-          *ngFor="let skill of getElementsInFormArray(); let i = index"
+          *ngFor="let skill of skillForm.controls.skillsGrp.controls; let i = index"
         >
-          <div [formGroupName]="i" fxLayout="row" fxLayoutGap="10px">
+          <div [formGroupName]="i" class="row">
             <mat-form-field>
               <input
                 matInput

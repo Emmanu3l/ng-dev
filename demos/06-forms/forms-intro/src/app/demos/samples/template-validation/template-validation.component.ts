@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, inject } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Person } from '../person.model';
 import { PersonService } from '../person.service';
@@ -10,10 +10,8 @@ import { PersonService } from '../person.service';
 })
 export class TemplateValidationComponent implements OnInit {
   @ViewChild('personForm') form: NgForm | null = null;
-
+  ps = inject(PersonService);
   person: Person = new Person();
-
-  constructor(private ps: PersonService) {}
 
   ngOnInit() {
     this.ps.getPerson().subscribe((p) => {
