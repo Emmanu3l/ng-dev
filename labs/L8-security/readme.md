@@ -14,4 +14,4 @@
 
     ![web-app](_images/config.jpg)
 
-- Implement Authentication. Use this [reference](/demos/10-securing-publishing/demo-ui)
+- Take the [fbauth-folder](../../demos/09-securing-publishing/securing-ui/src/app/fbauth/) from the demo app as a starting point.

@@ -12,6 +12,10 @@ table {
   width: 100%;
 }
 
+td{
+  cursor: pointer;
+}
+
 mat-icon{
   cursor: pointer;
   margin-top: 0.6rem;
@@ -21,3 +25,4 @@ mat-icon{
   width: 60px;
   text-align: right;
 }
+

@@ -6,28 +6,26 @@
   </mat-card-header>
   <mat-card-content>
     <button mat-raised-button [class.extraClass]="addClass">
-      Bind class using boolean & prop binding
+      Bind class using attribute binding
     </button>
-
-    <button mat-raised-button (click)="toggleBinding()" color="accent">Toggle</button>
-
   </mat-card-content>
 </mat-card>
 
 <mat-card appearance="outlined">
   <mat-card-header>
-    <mat-card-title> Multible Class Binding </mat-card-title>
+    <mat-card-title> Binding Multiple Classes </mat-card-title>
   </mat-card-header>
   <mat-card-content>
-    <button mat-raised-button [ngClass]="setClasses()">
+    <div mat-raised-button [ngClass]="setClasses()">
       Bind class using method
-    </button>
+    </div>
+    <button mat-raised-button (click)="toggleBinding()" color="accent">Toggle</button>
   </mat-card-content>
 </mat-card>
 
 <mat-card appearance="outlined">
   <mat-card-header>
-    <mat-card-title> If ? then : else </mat-card-title>
+    <mat-card-title>Attribute Binding with If : then : else </mat-card-title>
   </mat-card-header>
   <mat-card-content>
     <button
@@ -37,18 +35,6 @@
     >
       Set styles using JSON
     </button>
-
     <button mat-raised-button (click)="toggleStyle()" color="accent">Toggle</button>
-  </mat-card-content>
-</mat-card>
-
-<mat-card appearance="outlined">
-  <mat-card-header>
-    <mat-card-title> Multible Style Binding </mat-card-title>
-  </mat-card-header>
-  <mat-card-content>
-    <button mat-raised-button [ngStyle]="setStyles()" (click)="toggleStyle" color="accent">
-      Set styles using JSON
-    </button>
   </mat-card-content>
 </mat-card>

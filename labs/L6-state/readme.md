@@ -11,30 +11,30 @@
 
 - Add a Material Sidenav to app.component.html    
 
-```html
-<div class="grid">
-  <div class="gd-navbar">
-    <app-navbar></app-navbar></div>
-  <div class="gd-loading">
-    <app-loading *ngIf="isLoading | async"></app-loading>
+  ```html
+  <div class="grid">
+    <div class="gd-navbar">
+      <app-navbar></app-navbar></div>
+    <div class="gd-loading">
+      <app-loading *ngIf="isLoading | async"></app-loading>
+    </div>
+    <div class="gd-mainrow">
+      <mat-sidenav-container>
+        <mat-sidenav #sidenav class="sidenav"
+        [opened]="ms.sideNavVisible | async"
+        [mode]="mode">
+          <app-sidemenu></app-sidemenu>
+        </mat-sidenav>
+        <mat-sidenav-content [ngStyle]="getWorbenchStyle()">
+          <router-outlet></router-outlet>
+        </mat-sidenav-content>
+      </mat-sidenav-container>
+    </div>
   </div>
-  <div class="gd-mainrow">
-    <mat-sidenav-container>
-      <mat-sidenav #sidenav class="sidenav"
-      [opened]="ms.sideNavVisible | async"
-      [mode]="mode">
-        <app-sidemenu></app-sidemenu>
-      </mat-sidenav>
-      <mat-sidenav-content [ngStyle]="getWorbenchStyle()">
-        <router-outlet></router-outlet>
-      </mat-sidenav-content>
-    </mat-sidenav-container>
-  </div>
-</div>
-``` 
+  ``` 
 - Add a required css to app.component.scss
 
-  ```
+  ```css
   .grid {
     display: grid;
     height: 100vh;
@@ -66,11 +66,11 @@
   }
   ```
 
-- Take the solution from the [Demo App](/demos/08-rxjs-state/ng-reactive/src/app/shared/sidenav/) as a reference.
+- Take the [demo.container](.../../../../demos/07-rxjs-state/ng-reactive/src/app/demos/demo-container/) and the [sidenav.service.ts](.../../../../demos/07-rxjs-state/ng-reactive/src/app/shared/sidenav/sidenav.service.ts) as a reference.
 
 ## Implement a global loading inicator (Advanced Optional):
 
-Note: If your time permits you can also a loading indicator using an interceptor. Take this reference from the [Demo App](/demos/08-rxjs-state/ng-reactive/src/app/shared/loading/).
+Note: If your time permits you can also a loading indicator using an interceptor. Take this reference from the [Demo App](.../../../../demos/07-rxjs-state/ng-reactive/src/app/shared/loading/).
 
 - Implement a stateful loading service
 

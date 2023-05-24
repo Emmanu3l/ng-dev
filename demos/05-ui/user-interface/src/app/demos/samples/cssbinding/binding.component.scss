@@ -1,5 +1,5 @@
 .myButton {
-  font-size: 1.7em;
+  font-size: var(--font-medium);
 }
 
 .extraClass {
@@ -9,13 +9,22 @@
 
 .anotherClass {
   font-weight: bold;
+  color: white;
 }
 
 .thirdClass {
   background: rgb(183, 43, 43);
+  padding: var(--gap-medium);
 }
 
 
 button {
-  margin-right: 0.5rem;
+  margin-left: var(--gap-medium);
+}
+
+mat-card-content{
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: center;
 }
