@@ -16,7 +16,7 @@
     <div class="gd-navbar">
       <app-navbar></app-navbar></div>
     <div class="gd-loading">
-      <app-loading *ngIf="isLoading | async"></app-loading>
+      <!-- <app-loading *ngIf="isLoading | async"></app-loading> -->
     </div>
     <div class="gd-mainrow">
       <mat-sidenav-container>
