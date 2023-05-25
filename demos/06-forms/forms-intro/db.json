@@ -25,14 +25,13 @@
       "title": "Reactive FormsBuilder"
     },
     {
+      "url": "reactivevalidation",
+      "title": "Reactive Validation"
+    },
+    {
       "url": "formarray",
       "title": "Reactive Form Array"
     },
-
-    {
-      "url": "reactivevalidation",
-      "title": "Reactive Validation"
-    }
   ]
   ,
   "top-links": [

@@ -5,25 +5,24 @@
   </mat-card-header>
 
   <mat-card-content fxLayout="column" class="cmdItems">
-    <button mat-raised-button color="accent" (click)="useObsFrom()">
+    <button mat-raised-button color="accent" (click)="useOf()">of()</button>
+    <button mat-raised-button color="accent" (click)="useFrom()">
       from()
     </button>
-    <button mat-raised-button color="accent" (click)="useOf()">of()</button>
-    <button mat-raised-button color="accent" (click)="useOfwithSpread()">
-      of() with spread()
-    </button>
-    <button mat-raised-button color="accent" (click)="useNewObs()">new Observabl()</button>
-    <button mat-raised-button color="accent" (click)="wrappingCallbacks()">
-      Wrapping Callbacks
-    </button>
-    <button mat-raised-button color="accent" (click)="usePromiseToObs()">
-      Casting Promises
-    </button>
-    <button mat-raised-button color="accent" (click)="useTap()">
+    <button mat-raised-button color="accent" (click)="useTapMap()">
       tap() - A side effect
     </button>
     <button mat-raised-button color="accent" (click)="useOperator()">
       filter() - A simple Operator
     </button>
+    <button mat-raised-button color="accent" (click)="usePromiseToObs()">
+      Casting Promises
+    </button>
+    <button mat-raised-button color="accent" (click)="useNewObs()">new Observabl()</button>
+    <button mat-raised-button color="accent" (click)="wrappingCallbacks()">
+      Wrapping Callbacks
+    </button>
+
+
   </mat-card-content>
 </mat-card>

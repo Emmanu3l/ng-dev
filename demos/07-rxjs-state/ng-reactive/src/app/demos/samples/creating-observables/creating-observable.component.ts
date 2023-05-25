@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import axios from 'axios';
-import { from, Observable, of } from 'rxjs';
+import { Observable, from, of } from 'rxjs';
 import { filter, map, tap } from 'rxjs/operators';
 
 @Component({
@@ -8,41 +8,52 @@ import { filter, map, tap } from 'rxjs/operators';
   templateUrl: './creating-observable.component.html',
   styleUrls: ['./creating-observable.component.scss'],
 })
-export class CreatingObservableComponent implements OnInit {
-  constructor() { }
-
+export class CreatingObservableComponent {
   onErr = (err: any) => console.log(err);
   onComplete = () => console.log('complete');
-
-  ngOnInit() { }
-
-  useObsFrom() {
-    let arr = [2, 5, 9, 12, 22];
-
-    //this overload of subscribe is depricated
-    from(arr).subscribe(
-      //emit each item from the array after the other
-      (data: number) => console.log('from(): ', data), //success
-      this.onErr, //error
-      this.onComplete //complete
-    );
-
-    //use this pattern when subscribing and handling complete and error case
-    let observer = {} as any;
-    observer.next = (data: number) => console.log('from(): ', data);
-    observer.error = this.onErr;
-    observer.complete = this.onComplete;
-
-    from(arr).subscribe(observer);
-  }
 
   useOf() {
     of([2, 5, 9, 12, 22]).subscribe((data) => console.log('of(): ', data));
   }
 
-  useOfwithSpread() {
-    of(...[2, 5, 9, 12, 22]).subscribe((data) => console.log(data));
+  useFrom() {
+    const arr = [2, 5, 9, 12, 22];
+    from(arr).subscribe((data: number) => console.log('from(): ', data));
   }
+
+  useTapMap() {
+    from([2, 5, 9, 12, 22]) // 5 marbles
+      .pipe(
+        tap((n) => console.log('before filter: ', n)),
+        map((n) => n * 2),
+        tap((n) => console.log('after filter: ', n)),
+      )
+      .subscribe((data: number) => console.log('final: ', data));
+  }
+
+  useOperator() {
+    from([2, 5, 9, 12, 22]) // 5 marbles
+      .pipe(
+        filter((n) => n > 6),
+        map((n) => n * 2)
+      )
+      .subscribe((data: number) => console.log('useOperator: ', data));
+  }
+  // Use the mock Promise
+  usePromiseToObs() {
+    const url = 'http://localhost:3000/skills';
+
+    //classic promise pattern
+    axios.get(url).then((data) => console.log('received data', data));
+
+    // from casts a promise to an observable so that it can be subscribe
+    from(axios.get(url)).subscribe(
+      (data) => console.log('data from axios', data),
+      (err) => console.log('err:', err),
+      () => console.log('complete')
+    );
+  }
+
 
   useNewObs() {
     let skills = [
@@ -94,40 +105,5 @@ export class CreatingObservableComponent implements OnInit {
     this.getGeolocation$().subscribe((loc) => {
       console.log('current Geolocation:', loc);
     });
-  }
-
-  // Use the mock Promise
-  usePromiseToObs() {
-    const url = 'http://localhost:3000/skills';
-
-    //classic promise pattern
-    axios.get(url).then((data) => console.log('received data', data));
-
-    // from casts a promise to an observable so that it can be subscribe
-    from(axios.get(url)).subscribe(
-      (data) => console.log('data from axios', data),
-      (err) => console.log('err:', err),
-      () => console.log('complete')
-    );
-  }
-
-  useTap() {
-    from([2, 5, 9, 12, 22]) // 5 marbles
-      .pipe(
-        tap((n) => console.log('before filter: ', n)),
-        filter((n) => n > 6),
-        tap((n) => console.log('after filter: ', n)),
-        map((n) => n * 2)
-      )
-      .subscribe((data: number) => console.log('final: ', data));
-  }
-
-  useOperator() {
-    from([2, 5, 9, 12, 22]) // 5 marbles
-      .pipe(
-        filter((n) => n > 6),
-        map((n) => n * 2)
-      )
-      .subscribe((data: number) => console.log('useOperator: ', data));
   }
 }

@@ -1,5 +1,5 @@
 {
-  "demos":[
+  "demos": [
     {
       "url": "creating",
       "title": "Observable Basics"
@@ -25,12 +25,12 @@
       "title": "Reactive Programming"
     },
     {
-      "url": "operators",
-      "title": "Observable Operators"
-    },
-    {
       "url": "responsive-screen",
       "title": "Screen & Events"
+    },
+    {
+      "url": "operators",
+      "title": "Observable Operators"
     },
     {
       "url": "subjects",
@@ -188,38 +188,38 @@
   ],
   "persons": [
     {
-       "id":1,
-       "name":"Cleo",
-       "age":15,
-       "gender":"female",
-       "married":true,
-       "imgUrl":"/assets/images/cleo.png"
+      "id": 1,
+      "name": "Cleo",
+      "age": 15,
+      "gender": "female",
+      "married": true,
+      "imgUrl": "/assets/images/cleo.png"
     },
     {
-       "id":2,
-       "name":"Soi",
-       "age":9,
-       "gender":"female",
-       "married":false,
-       "imgUrl":"/assets/images/soi.png"
+      "id": 2,
+      "name": "Soi",
+      "age": 9,
+      "gender": "female",
+      "married": false,
+      "imgUrl": "/assets/images/soi.png"
     },
     {
-       "id":3,
-       "name":"Giro",
-       "age":11,
-       "gender":"male",
-       "married":false,
-       "imgUrl":"/assets/images/giro.png"
+      "id": 3,
+      "name": "Giro",
+      "age": 11,
+      "gender": "male",
+      "married": false,
+      "imgUrl": "/assets/images/giro.png"
     },
     {
-       "id":4,
-       "name":"Flora",
-       "age":14,
-       "gender":"female",
-       "married":false,
-       "imgUrl":"/assets/images/flora.png"
+      "id": 4,
+      "name": "Flora",
+      "age": 14,
+      "gender": "female",
+      "married": false,
+      "imgUrl": "/assets/images/flora.png"
     }
- ],
+  ],
   "comments": [
     {
       "id": 1,
@@ -247,26 +247,13 @@
       "userId": 1,
       "id": 2,
       "title": "quis ut nam facilis et officia qui",
-      "completed": false
+      "completed": true
     },
     {
       "userId": 1,
       "id": 3,
       "title": "fugiat veniam minus",
       "completed": false
-    },
-    {
-      "userId": 1,
-      "id": 4,
-      "title": "et porro tempora",
-      "completed": true
-    },
-    {
-      "userId": 1,
-      "id": 5,
-      "title": "laboriosam mollitia et enim quasi adipisci quia provident illum",
-      "completed": false
     }
   ]
-
 }

@@ -13,6 +13,7 @@ import { environment } from '../../../environments/environment';
 export class SideNavService {
   http = inject(HttpClient);
   breakpointObserver = inject(BreakpointObserver);
+
   visible$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(true);
   position$: BehaviorSubject<MatDrawerMode> = new BehaviorSubject<MatDrawerMode>('side');
 
@@ -29,10 +30,10 @@ export class SideNavService {
   }
 
   watchScreen = this.breakpointObserver
-    .observe([Breakpoints.XSmall, Breakpoints.Small])
+    .observe([Breakpoints.XSmall, Breakpoints.Small]) //kleiner
     .pipe(
       tap((matchesBreakpoint) => {
-        console.log(matchesBreakpoint);
+        console.log("matches breakpoint", matchesBreakpoint);
         this.visible$.next(matchesBreakpoint.matches ? false : true);
         this.position$.next(matchesBreakpoint.matches ? 'over' : 'side');
       })

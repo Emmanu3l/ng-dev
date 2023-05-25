@@ -10,13 +10,14 @@ import { TaskService } from '../tasks/task.service';
   styleUrls: ['./async-pipe.component.scss'],
 })
 export class AsyncPipeComponent implements OnInit {
-  constructor(private ts: TaskService) {}
+  constructor(private ts: TaskService) { }
 
-  // Classic subscribe Pattern
+  // Imperative Approach using subscribe
   tasks: TaskItem[] = [];
 
-  // Reified Reactive Approach using async pipe
+  // Declarative Reactive Approach using async pipe
   tasks$: Observable<TaskItem[]> = this.ts.getTasks();
+
   completed$: Observable<TaskItem> = this.tasks$.pipe(
     mergeMap((tasks: TaskItem[]) => tasks),
     filter((t) => t.completed)

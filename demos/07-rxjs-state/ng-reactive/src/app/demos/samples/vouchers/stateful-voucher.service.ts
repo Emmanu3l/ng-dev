@@ -26,7 +26,7 @@ export class StatefulVoucherService {
       var arr = this.vouchers.getValue();
       arr.push(lateVoucher as unknown as Voucher);
       this.vouchers.next(arr);
-    }, 4000);
+    }, 6000);
   }
 
   getAllVouchers() {

@@ -29,8 +29,10 @@ export class DemoContainerComponent implements OnInit {
 
   isLoading = false;
 
+  // sets default behavior for sidenav
   sidenavMode = this.nav.getSideNavPosition();
   sidenavVisible = this.nav.getSideNavVisible();
+
   workbenchMargin = this.sidenavVisible.pipe(
     map((visible: boolean) => { return visible ? { 'margin-left': '5px' } : {} })
   );

@@ -73,8 +73,10 @@
           opt
         }}</mat-radio-button>
       </mat-radio-group>
-      <button mat-raised-button (click)="validateForm(personForm)" color="accent">Validate</button>
-      <button mat-raised-button type="submit" color="accent" [disabled]="!personForm.valid">Submit</button>
+      <div class="cmdItems">
+        <button mat-raised-button (click)="validateForm(personForm)" color="accent">Validate</button>
+        <button mat-raised-button type="submit" color="accent" [disabled]="!personForm.valid">Submit</button>
+      </div>
     </form>
   </mat-card-content>
 </mat-card>
